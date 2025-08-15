@@ -1,0 +1,277 @@
+/* stylelint-disable no-descending-specificity */
+
+/* global teaser styles */
+main .section.teaser-container {
+	padding: 0;
+}
+
+main .section.teaser-container > div {
+	padding: 0;
+	max-width: unset;
+}
+
+.teaser div.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.teaser img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+main .section .teaser p,
+main .section .teaser h2,
+main .section .teaser h5 {
+	text-align: center;
+}
+
+main .section .teaser h2 {
+	color: var(--text-color);
+    font-family: var(--heading-font);
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 3.4375rem;
+    line-height: 3.75rem;
+    letter-spacing: 3.6px;
+    margin: 0;
+}
+
+main .section .teaser h5 {
+	color: var(--text-color);
+    font-family: var(--body-font);
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 1.5rem;
+    line-height: 1.5rem;
+	letter-spacing: 0.05em;
+    margin: 0 0 16px;
+}
+
+main .section .teaser p:not(.button-container) {
+	font-family: var(--body-font);
+	color: var(--text-color);
+	font-size: 0.875rem;
+	font-weight: 300;
+	letter-spacing: 0.05em;
+    line-height: 1.375rem;
+	margin-bottom: 16px;
+}
+
+main .section .teaser p { 
+	margin: 0;
+}
+
+main .section .teaser p.button-container a {
+	display: block;
+}
+
+main .section .teaser p:not(.button-container) a:hover,
+main .section .teaser p.button-container a:hover {
+	text-decoration: none;
+}
+
+
+
+/* short teaser styles */
+.teaser.short {
+	margin-bottom: 20px;
+}
+
+
+
+/* teasers with background color */
+main .section.background-color .teaser {
+	background-color: var(--gc);
+}
+
+main .section.background-color .teaser h2 {
+    font-family: var(--secondary-font);
+	font-size: 3rem;
+}
+
+
+
+/* text-only teaser styles */
+main .section.text-only .teaser {
+	padding: 40px;
+}
+
+main .section.text-only:not(.section.background-color) h2 {
+	margin: 0 0 32px;
+}
+
+main .section.text-only:not(.section.background-color) .teaser p.button-container {
+	margin: 16px 0 2.25rem;
+}
+
+
+
+/* center text teaser styles */
+main .section.center-text.text-only .teaser > div > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+/* left & right text teaser styles */
+main .section.text-left .teaser,
+main .section.text-right .teaser {
+	position: relative;
+}
+
+main .section.text-left .teaser > div:nth-of-type(3),
+main .section.text-right .teaser > div:nth-of-type(3) {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 5rem;
+	max-width: 28.2%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main .section.text-left .teaser > div:nth-of-type(3) h2 {
+	white-space: nowrap;
+}
+
+main .section.text-right .teaser > div:nth-of-type(3) h2 {
+	max-width: 500px;
+}
+
+main .section.text-left .teaser > div:nth-of-type(3) p:not(.button-container),
+main .section.text-right .teaser > div:nth-of-type(3) p:not(.button-container) {
+	margin: 48px auto;
+	width: 70%;
+}
+
+/* left styles */
+main .section.text-left .teaser > div:nth-of-type(3) {
+	left: 0;
+}
+
+/* right styles */
+main .section.text-right .teaser > div:nth-of-type(3) {
+	right: 0;
+}
+
+
+
+/* text under styles */
+main .section.text-under .teaser > div:nth-of-type(3) {
+	margin: 64px 2.56rem 0;
+    padding: 0 0.75rem;
+}
+
+main .section.text-under .teaser > div:nth-of-type(3) h2 {
+	margin-bottom: 32px;
+}
+
+/* mobile */
+@media (width <= 1024px){
+	main .section .teaser h2 {
+		font-size: 45px;
+		font-weight: 300;
+		letter-spacing: 0;
+		line-height: 35px;
+	}
+	
+	main .section.text-left .teaser > div:nth-of-type(3),
+	main .section.text-right .teaser > div:nth-of-type(3) {
+		margin: 0 2rem;
+		max-width: 41%;
+	}
+
+	main .section.text-left .teaser > div:nth-of-type(3) h2,
+	main .section.text-right .teaser > div:nth-of-type(3) h2 {
+		font-size: 40px;
+		font-weight: 300;
+		letter-spacing: 0;
+		line-height: 50px;
+		margin: 0 auto;
+	}
+
+	main .section.text-right .teaser > div:nth-of-type(3) h2 {
+		max-width: 300px;
+	}
+
+	main .section.text-left .teaser > div:nth-of-type(3) p:not(.button-container),
+	main .section.text-right .teaser > div:nth-of-type(3) p:not(.button-container) {
+		margin: 32px auto;
+		width: 70%;
+	}
+	
+	main .section.text-under .teaser > div:nth-of-type(3) {
+		margin-top: 48px;
+	}
+
+	main .section.text-under .teaser > div:nth-of-type(3) h2 {
+		margin-bottom: 24px;
+	}
+}
+
+@media (width <= 767px){
+	main .section.text-left .teaser,
+	main .section.text-right .teaser {
+		display: flex;
+		flex-direction: column;
+	}
+
+	main .section.text-left .teaser > div:nth-of-type(3),
+	main .section.text-right .teaser > div:nth-of-type(3) {
+		position: relative;
+		margin: 0 5rem;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transform: translate(0);
+		padding: 24px 40px;
+	}
+
+	main .section .teaser h2 {
+		font-size: 35px;
+		font-weight: 300;
+		letter-spacing: 0;
+		line-height: 40px;
+	}
+
+	main .section.text-under .teaser > div:nth-of-type(3) {
+		margin-top: 24px;
+	}
+}
+
+
+
+/* understated teaser styles */
+main .section.understated .teaser > div > div {
+	padding-bottom: 16px;
+}
+
+main .section.understated .teaser h5 {
+	margin-top: 16px;
+}
+
+main .section.understated .teaser p {
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.78px;
+}
+
+main .section.understated .teaser p:not(.button-container) a {
+	font-family: var(--body-font);
+	color: var(--dark-color);
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+    line-height: 1.375rem;
+	margin: 0;
+	text-align: center;
+	text-decoration: underline;
+    text-underline-offset: 0.1875rem;
+}
