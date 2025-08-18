@@ -1,6 +1,6 @@
 async function fetchExternalHeader() {
-  const r = await fetch('/public/ext/header.html', { credentials: 'same-origin' });
-  return r.ok ? r.text() : null;
+  const response = await fetch('/public/ext/header.html', { credentials: 'same-origin' });
+  return response.ok ? response.text() : null;
 }
 
 function htmlToFragment(html) {

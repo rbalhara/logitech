@@ -8,8 +8,7 @@
     "lint:js": "eslint .",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
-    "pull:header": "node scripts/fetch-header.mjs",
-    "pull:footer": "node scripts/fetch-footer.mjs"
+    "pull:header-footer": "node scripts/fetch-header-footer.js"
   },
   "repository": {
     "type": "git",
