@@ -1,20 +1,33 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+async function fetchExternalFooter() {
+  const r = await fetch('/public/ext/footer.html', { credentials: 'same-origin' });
+  return r.ok ? r.text() : null;
+}
 
-/**
- * loads and decorates the footer
- * @param {Element} block The footer block element
- */
+function htmlToFragment(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const root = doc.body.childElementCount ? doc.body : doc;
+  root.querySelectorAll('script').forEach((s) => s.remove()); // safety
+
+  const fragment = document.createDocumentFragment();
+  [...root.children].forEach((el) => fragment.appendChild(el.cloneNode(true)));
+  return fragment;
+}
+
+/** @param {Element} block */
 export default async function decorate(block) {
-  // load footer as fragment
-  const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-  const fragment = await loadFragment(footerPath);
+  block.innerHTML = ''; // clear existing content
+  const wrapper = document.createElement('div');
+  wrapper.className = 'nav-wrapper';
 
-  // decorate footer DOM
-  block.textContent = '';
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
-
-  block.append(footer);
+  try {
+    const externalHTML = await fetchExternalFooter();
+    if (externalHTML) {
+      const frag = htmlToFragment(externalHTML);
+      const el = frag.firstElementChild;
+      wrapper.appendChild(el);
+      block.appendChild(wrapper);
+    }
+  } catch (err) {
+    console.warn('[footer] external/static failed, falling back to fragment:', err);
+  }
 }

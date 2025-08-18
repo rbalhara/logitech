@@ -19,6 +19,7 @@
   --black: black;
   --white: white;
   --background-color: #fff;
+  --color-light: #00fdcf;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -39,7 +40,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  /* --nav-height: 64px; */
 }
 
 @font-face {
@@ -123,17 +124,17 @@ main pre {
 
 /* links */
 a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
+  /* color: var(--link-color);
+  text-decoration: none; */
 }
 
 a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color);
+  /* text-decoration: underline;
+  color: var(--link-hover-color); */
 }
 
 /* buttons */
-a.button:any-link, button {
+/* a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -167,7 +168,7 @@ a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
-}
+} */
 
 main img {
   max-width: 100%;
@@ -176,9 +177,9 @@ main img {
 }
 
 .icon {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
+  /* display: inline-block; */
+  height: 16px;
+  width: auto;
 }
 
 .icon img {
