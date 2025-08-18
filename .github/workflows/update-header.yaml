@@ -1,17 +1,21 @@
 name: Update external header and footer
 on:
-  schedule:
-    - cron: "17 7 * * *"   # Daily at 07:17 UTC (change as you like)
+  push: # run on every push
+    branches:
+      - main # default branch
   workflow_dispatch: {}
+
 permissions:
   contents: write
+
 jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 18 }
+        with:
+          node-version: 18
       - run: npm ci
       - run: npm run pull:header-footer
       - name: Commit & push if changed
