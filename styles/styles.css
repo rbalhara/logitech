@@ -38,9 +38,6 @@
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
-
-  /* nav height */
-  /* --nav-height: 64px; */
 }
 
 @font-face {
@@ -134,6 +131,7 @@ a:hover {
 }
 
 /* buttons */
+
 /* a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
