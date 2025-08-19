@@ -1,0 +1,71 @@
+.article main h1 {
+  font-size: 32px;
+  text-wrap: unset;
+}
+.article main h2 {
+  font-size: 32px;
+}
+.article main p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.article main p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.625em;
+  word-break: normal;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.article main p img {
+  padding: 1em 0;
+}
+
+@media (width >= 900px) {
+  .article main h1 {
+    font-size: 56px;
+  }
+}
+
+/* section styling */
+.article main .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+}
+
+.article main .content > .default-content-wrapper {
+  width: 100%;
+  max-width: unset;
+  margin: unset;
+}
+.article main .content .container {
+  width: 100%;
+  max-width: unset;
+  margin: unset;
+}
+
+.article main .content .container {
+  padding-top: 1em;
+}
+
+.article main .recent-news {
+  margin: 1rem 0 0;
+}
+
+@media (width >= 900px) {
+  .article main .content {
+    flex-direction: row;
+    padding: 0 0 32px;
+  }
+  .article main .content > .default-content-wrapper {
+    width: 66%;
+  }
+  .article main .content .container {
+    width: 33%;
+  }
+}
+

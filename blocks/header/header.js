@@ -34,4 +34,7 @@ export default async function decorate(block) {
   /* minor UI fixes */
   const header = block.querySelector('header');
   header.style = '--header-height: 97px;';
+
+  const mainLogoLink = block.querySelector('.main-nav-logo-anim');
+  mainLogoLink.href = '/';
 }

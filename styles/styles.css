@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
+  --link-color: #00b8fc;
   --link-hover-color: #136ff6;
   --light-color: #eee;
   --dark-color: #ccc;
@@ -59,9 +59,9 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-xs);
   margin: 0;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family) !important;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -78,7 +78,7 @@ header {
 
 h1, h2, h3,
 h4, h5, h6 {
-  font-family: var(--heading-font-family);
+  font-family: var(--heading-font-family) !important;
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
@@ -187,12 +187,12 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 32px 16px;
 }
 
 @media (width >= 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 32px;
   }
 }
 
