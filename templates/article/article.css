@@ -21,6 +21,10 @@
   padding: 1em 0;
 }
 
+.article main .section .default-content-wrapper img {
+  width: 100%;
+}
+
 @media (width >= 900px) {
   .article main h1 {
     font-size: 56px;
