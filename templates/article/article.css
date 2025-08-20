@@ -21,7 +21,7 @@
   padding: 1em 0;
 }
 
-.article main .section .default-content-wrapper img {
+.article main .section:not(.content) img {
   width: 100%;
 }
 

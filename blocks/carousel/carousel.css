@@ -44,6 +44,7 @@
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
   align-items: center;
 }
+
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='right']) {
   align-items: flex-end;
 }
@@ -96,6 +97,7 @@
 	display: flex;
 	margin-top: auto;
 	padding-top: 1.5rem;
+  gap: 10px;
 }
 
 .carousel .carousel-slide-content .eyebrow {
@@ -130,10 +132,6 @@
 	color: var(--link-color);
 	text-decoration: none;
 	letter-spacing: 1px;
-}
-
-.carousel .carousel-navigation-buttons {
-	gap: 10px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */

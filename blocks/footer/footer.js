@@ -28,6 +28,7 @@ export default async function decorate(block) {
       block.appendChild(wrapper);
     }
   } catch (err) {
+    /* eslint-disable-next-line no-console */
     console.warn('[footer] external/static failed, falling back to fragment:', err);
   }
 }

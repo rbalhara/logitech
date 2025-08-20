@@ -10,7 +10,7 @@
 }
 
 .cards .cards-card-body {
-  margin: 16px 0;
+  margin: 0;
 }
 
 .cards .cards-card-image {
@@ -102,8 +102,4 @@
 
 .cards.row .eyebrow {
   display: none;
-}
-
-.cards .cards-card-body {
-  margin: 0;
 }

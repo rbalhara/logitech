@@ -35,6 +35,7 @@
 
 .featured-articles > ul > li img {
   width: 100%;
+
   /* aspect-ratio: 4 / 3; */
   object-fit: contain;
 }
