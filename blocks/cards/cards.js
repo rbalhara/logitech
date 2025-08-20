@@ -19,6 +19,13 @@ export default async function decorate(block) {
 
   const BATCH_SIZE = 3;
 
+  // Variant flags
+  const isRowVariant = block.classList.contains('row');
+  const isPlainCardsBlock =
+    block.classList.length === 2 &&
+    block.classList.contains('block') &&
+    block.classList.contains('cards');
+
   // Build <ul> of cards from data
   const ul = document.createElement('ul');
 
@@ -75,8 +82,8 @@ export default async function decorate(block) {
     a.append(imgWrap, body);
     li.append(a);
 
-    // Hide beyond first batch
-    if (idx >= BATCH_SIZE) {
+    // Hide beyond first batch unless it's the row variant (row shows all)
+    if (!isRowVariant && idx >= BATCH_SIZE) {
       li.hidden = true;
       li.classList.add('is-hidden');
     }
@@ -87,13 +94,11 @@ export default async function decorate(block) {
   block.textContent = '';
   block.append(ul);
 
-  // Only add toggle if block has EXACTLY ["block", "cards"]
-  const isPlainCardsBlock =
-    block.classList.length === 2 &&
-    block.classList.contains('block') &&
-    block.classList.contains('cards');
-
-  if (isPlainCardsBlock && data.length > BATCH_SIZE) {
+  // Only add toggle if:
+  // - it's NOT the row variant, and
+  // - block has EXACTLY ["block", "cards"], and
+  // - there are more items than the batch size.
+  if (!isRowVariant && isPlainCardsBlock && data.length > BATCH_SIZE) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'button secondary load';
@@ -104,11 +109,7 @@ export default async function decorate(block) {
     const items = [...ul.children];
 
     const updateState = () => {
-      if (shown >= items.length) {
-        btn.textContent = 'SHOW LESS';
-      } else {
-        btn.textContent = 'LOAD MORE';
-      }
+      btn.textContent = shown >= items.length ? 'SHOW LESS' : 'LOAD MORE';
     };
 
     btn.addEventListener('click', () => {
