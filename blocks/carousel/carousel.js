@@ -134,7 +134,7 @@ function createSlideFromData(item, slideIndex, carouselId, isSingleSlide) {
 }
 
 let carouselId = 0;
-const AUTO_SLIDE_INTERVAL = 3000; // 3 seconds
+const AUTO_SLIDE_INTERVAL = 4000; // 4 seconds
 const timers = new Map(); // keep track of intervals per carousel
 
 function stopAutoSlide(block) {
