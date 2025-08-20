@@ -59,7 +59,7 @@
   color: var(--link-color);
 }
 
-@media (width >=600px) {
+@media (width >= 600px) {
   .featured-articles > ul {
     grid-template-columns: repeat(auto-fit, minmax(23%, 1fr));
     grid-auto-rows: 1fr;

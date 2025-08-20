@@ -177,7 +177,7 @@
 }
 
 /* Responsive changes */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .carousel .carousel-slide {
     flex-direction: row;
 		height: 500px;

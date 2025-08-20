@@ -55,5 +55,3 @@ function createCard({ title, image, category }, url) {
   `;
   return card;
 }
-
-// <span>&#x1F550; ${date}</span>
