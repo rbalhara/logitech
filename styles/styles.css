@@ -90,7 +90,7 @@ h1 { font-size: var(--heading-font-size-xxl) }
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) !important }
-h5 { font-size: var(--heading-font-size-s) }
+h5 { font-size: var(--heading-font-size-s)}
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
@@ -131,14 +131,13 @@ a:hover {
 }
 
 /* buttons */
-
-/* a.button:any-link, button {
+a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 8px 15px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -149,11 +148,10 @@ a:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 4px;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
@@ -166,7 +164,7 @@ a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
-} */
+}
 
 main img {
   max-width: 100%;
@@ -188,6 +186,10 @@ main img {
 /* sections */
 main .section {
   padding: 32px 16px;
+}
+
+main .section > .default-content-wrapper {
+  margin-bottom: 1.5rem;
 }
 
 @media (width >= 600px) {
