@@ -484,8 +484,8 @@ async function loadEager(doc) {
 
   const main = doc.querySelector('main');
   if (main) {
-    decorateTemplates(main);
     decorateMain(main);
+    await decorateTemplates(main);
     aggregateTabSectionsIntoComponents(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);

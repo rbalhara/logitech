@@ -74,3 +74,36 @@
     max-height: 176px;
   }
 }
+
+/* row - variation */
+.cards.row {
+  margin-top: 1rem;
+}
+
+.cards.row > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cards.row > ul > li > a {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.cards.row > ul > li img {
+  max-height: 100%;
+  max-width: 120px;
+  height: 100%;
+  object-fit: cover;
+  width: auto;
+}
+
+.cards.row .eyebrow {
+  display: none;
+}
+
+.cards .cards-card-body {
+  margin: 0;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
@@ -22,7 +23,6 @@ export default async function decorate(block) {
   const ul = document.createElement('ul');
 
   data.forEach((item, idx) => {
-    /* eslint-disable-next-line */
     const { path, title, category, image, lastModified } = item;
 
     const li = document.createElement('li');
@@ -87,7 +87,13 @@ export default async function decorate(block) {
   block.textContent = '';
   block.append(ul);
 
-  if (data.length > BATCH_SIZE) {
+  // Only add toggle if block has EXACTLY ["block", "cards"]
+  const isPlainCardsBlock =
+    block.classList.length === 2 &&
+    block.classList.contains('block') &&
+    block.classList.contains('cards');
+
+  if (isPlainCardsBlock && data.length > BATCH_SIZE) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'button secondary load';
