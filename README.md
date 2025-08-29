@@ -4,6 +4,8 @@
 - Preview: https://main--logitech--adobedevxsc.aem.page/
 - Live: https://main--logitech--adobedevxsc.aem.live/
 
+test
+
 ## Documentation
 
 Before using the boilerplate, we recommand you to go through the documentation on https://www.aem.live/docs/ and more specifically:
