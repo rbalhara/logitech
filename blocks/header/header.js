@@ -19,8 +19,6 @@ export default async function decorate(block) {
   const wrapper = document.createElement('div');
   wrapper.className = 'nav-wrapper';
 
-  console.log("test commit");
-
   try {
     const externalHTML = await fetchExternalHeader();
     if (externalHTML) {
